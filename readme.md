@@ -17,9 +17,14 @@
     1. Click the plus button.
     1. Add the name and the URL of the resource, then check the checkboxes of relevant editors for the resource.
     1. Refresh the page
-  1. Enjoy, you're all set! 
+    1. ** List of resources is saved per browser. i.e. If you create the list on Chrome it won't be available in Incognito mode or other browsers (Edge, Firefox, etc.).
+  1. Enjoy, you're all set!  
 
 ### Features
+##### v1.1
+- TBD
+    - Code optimization
+    - Accessibility implementation
 ##### v1.0
 - Resizeable panes
 - Code editors
@@ -34,15 +39,10 @@
 - Presentations management modal
     - Adding presentations
     - Remove a presentation
-    - Removing all presentations
-
-### Dependencies
-##### v1.0
-- Implemented [Ace](https://ace.c9.io/) v1.4.5 code editor library
-- Implemented [Split.js](https://github.com/nathancahill/split/tree/master/packages/splitjs) v1.5.11 split pane library
-- Implemented [Font Awesome](https://fontawesome.com) v.5.10.0 library
+    - Remove all presentations
 
 ### My Presentations URLs
+##### Use in Dreamers for an example
 1. https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21226&authkey=AD5XM3A4SADXtSA&em=2
 2. https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21227&authkey=ABu34ud-GpuJXDc&em=2
 3. https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21232&authkey=AGEzgK9R8MS08FE&em=2
@@ -50,3 +50,14 @@
 5. https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21229&authkey=AFJmGBOgf6evnB4&em=2
 6. https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21230&authkey=ABjQU5k2Q7PgVdM&em=2
 7. https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21231&authkey=AJEpFvtejnqsJsU&em=2
+
+## Developers Notes
+- MIT License included.
+- Implemented using LocalStorage to save the list of presentations and for other features. 
+
+### Dependencies
+##### v1.0
+- Implemented [Ace](https://ace.c9.io/) v1.4.5 code editor library
+- Implemented [Split.js](https://github.com/nathancahill/split/tree/master/packages/splitjs) v1.5.11 split pane library
+- Implemented [Font Awesome](https://fontawesome.com) v.5.10.0 library
+
