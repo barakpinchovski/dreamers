@@ -1,8 +1,21 @@
-# Dreamer
+# Dreamers
 ### A web-based teaching assistant tool for HTML, CSS and vanilla (plain) JavaScript
 ##### By [Barak Pinchovski](https://github.com/barakpinchovski) 
 
 ----
+
+### Use [Dreamers](https://barakpinchovski.github.io/dreamers) now!
+ 
+### Instructions
+1. Click the Dreamers link above.
+1. If you don't have any embedded resources (e.g. presentations) to show then simply write:
+    1. HTML in the editor on the left.
+    1. CSS in the editor at the center.
+    1. JS in the editor on the right.
+ 1. If you do have embedded resources to show then:
+    1. Click the settings button (cog icon) at the top left edge of the last section (at the bottom), a Settings modal will open.
+    1. Click the plus button.
+    1. Add the name and the URL of the resource, then check the checkboxes of relevant editors for the resource. 
 
 ### Features
 ##### v1.0

@@ -49,7 +49,7 @@ const modal = {
     <td>
         <input type="checkbox" value="js" name="js" ${checked.js} onclick="updateData(event, ${index})"/>
     </td>
-    <td>
+    <td hidden>
         <input type="checkbox" value="php" name="php" ${checked.php} onclick="updateData(event, ${index})"/>
     </td>`;
     modal.listIndex = index + 1;
