@@ -1,0 +1,132 @@
+#modal {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(105, 105, 105, 0.8);
+    width: 100%;
+    height: 100%;
+    z-index: 7;
+    font-family: sans-serif;
+}
+
+#modal.show-modal {
+    display: flex;
+}
+
+#modal > .content {
+    width: 80%;
+    margin: auto;
+    height: 70%;
+    display: block;
+    align-items: flex-start;
+    background-color: #fffef6;
+    color: #525252;
+    border-radius: 5px;
+    box-shadow: 2px 2px 12px 1px #383838;
+}
+
+#modal > .content header {
+    width: 100%;
+}
+
+#modal > .content h1 {
+    text-align: center;
+}
+
+#modal > .content table {
+    width: 100%;
+}
+
+#modal thead,
+#modal tbody,
+#modal tfoot {
+    outline: 1px solid dimgray;
+}
+
+#modal th i {
+    font-size: 1.6em;
+}
+
+#modal table .table-gap {
+    display: block;
+    padding: 5px 0;
+}
+
+#modal th i[class*=html] {
+    color: limegreen;
+}
+
+#modal th i[class*=css] {
+    color: dodgerblue;
+}
+
+#modal th i[class*=js] {
+    color: orange;
+}
+
+#modal th i[class*=php] {
+    color: rebeccapurple;
+}
+
+#modal tbody tr:hover {
+    background-color: #faffcf;
+}
+
+#modal tbody td {
+    text-align: center;
+}
+
+#modal tbody td input[type="text"] {
+    width: 100%;
+    border: 0;
+    background: transparent;
+}
+
+#modal tbody td input[type="checkbox"] {
+    cursor: pointer;
+}
+
+#modal .total-presentations {
+    text-align: center;
+    padding: 10px 0 0;
+}
+
+#modal #total-presentations {
+    font-weight: bold;
+}
+
+#modal tbody i,
+#modal tfoot i {
+    color: black;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+
+#modal tfoot i {
+    padding: 15px 0 15px;
+    font-size: 1.6em;
+}
+
+#modal tfoot i[class*=plus] {
+    padding-left: 10px;
+}
+
+#modal tfoot i:hover {
+    color: darkgrey;
+}
+
+#modal tbody i[class*=trash]:hover,
+#modal tfoot i[class*=eraser]:hover {
+    color: red;
+}
+
+#modal footer {
+    font-size: 0.8em;
+    padding: 30px;
+}
+
+#modal footer a,
+#modal footer a:visited {
+    color: blue;
+}

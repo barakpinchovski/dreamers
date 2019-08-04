@@ -1,0 +1,9 @@
+body, main {
+  font-size: inherit;
+}
+
+/* Reset applied styles from Split.js */
+main.split {
+  border: 0;
+  padding: 8px; /* Default margin value for the body element in index.html */
+}

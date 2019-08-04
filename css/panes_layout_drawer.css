@@ -1,0 +1,45 @@
+header.content {
+  position: relative;
+}
+
+header.content > nav {
+  position: absolute;
+  top: 0;
+  left: -93px;
+  background: #444444;
+  padding: 3px 0 3px 10px;
+  opacity: 0.2;
+  transition: all 0.2s ease-in;
+  border-radius: 0 2px 2px 0;
+  z-index: 5;
+}
+
+header.content > nav.expanded {
+  left: 0;
+}
+
+header.content > nav:hover {
+  opacity: 1;
+}
+
+header.content > nav.expanded  i:last-child {
+  width: 0;
+  margin: 0;
+  visibility: hidden;
+}
+
+header.content > nav i {
+  font-size: 0.6em;
+  color: white;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+header.content > nav i:last-child {
+  margin-right: 4px;
+  transition: all 0.2s;
+}
+
+header.content > nav i:hover {
+  transform: scale(1.2);
+}

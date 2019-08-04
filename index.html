@@ -1,0 +1,151 @@
+<!--<?php require_once 'tiers/logic/variables/paths.php'; ?>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta name="author" content="Barak Pinchovski"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <!-- Libraries CSS files -->
+    <link rel="stylesheet" href="libraries/libraries_init/ace.init.css"/>
+    <link rel="stylesheet" href="libraries/libraries_init/split.init.css"/>
+    <link rel="stylesheet" href="libraries/font-awesome/css/all.css"/>
+    
+        <!-- Custom CSS files -->
+    <link rel="stylesheet" href="css/live_update.css"/>
+    <style id="live-update-css"></style>
+    <link rel="stylesheet" href="css/panes_layout_drawer.css"/>
+    <link rel="stylesheet" href="css/embedded_presentation.css"/>
+    <link rel="stylesheet" href="css/modal.css"/>
+</head>
+    <body>
+        <header class="content">
+            <!-- Panes layout drawer -->
+            <nav>
+                <i class="fas fa-align-justify"></i>
+                <i class="fas fa-align-left" ></i>
+                <i class="fas fa-align-center"></i>
+                <i class="fas fa-align-right"></i>
+                <i class="fas fa-sign-out-alt"></i>
+            </nav>
+    
+            <!-- Panes -->
+<section id="html" class="split editor">&lt;!DOCTYPE html>
+&lt;html>
+    &lt;head>
+        &lt;title>&lt;/title>
+    &lt;/head>
+    &lt;body>
+    &lt;/body>
+&lt;/html></section>
+            
+            <section id="css" class="split editor"></section>
+            
+            <section id="js" class="split editor"></section>
+        
+        </header>
+        <main id="live-update" class="split">
+        
+        </main>
+        
+        <!-- Embedded presentation -->
+        <footer id="embedded_presentation" class="split">
+            <nav>
+                <i class="fas fa-cog" ></i>
+                <i class="fas fa-arrow-left"></i>
+                <label for="presentation-selector" hidden>Current Presentation</label>
+                <input id="presentation-selector" size="1"/>
+                <i class="fas fa-arrow-right"></i>
+                <i class="far fa-eye"></i>
+                <i class="fas fa-expand-arrows-alt"></i>
+                <span id="current-presentation-name"></span>
+            </nav>
+            <iframe src="">Your browser doesn't support the iframe tag.</iframe>
+        </footer>
+        
+        <!-- Modal -->
+        <div id="modal">
+            <section class="content">
+                <header>
+                    <h1>Settings</h1>
+                </header>
+                <main>
+                    <table>
+                        <caption>Presentations List</caption>
+                        <thead>
+                        <tr>
+                            <th colspan="7"><span class="table-gap"></span></th>
+                        </tr>
+                        <tr>
+                            <th rowspan="2" hidden>ID</th>
+                            <th rowspan="2" ></th>
+                            <th rowspan="2">Name</th>
+                            <th rowspan="2">URL</th>
+                            <th colspan="4">Editors</th>
+                        </tr>
+                        <tr>
+                            <th><i class="fab fa-html5"></i></th>
+                            <th><i class="fab fa-css3-alt"></i></th>
+                            <th><i class="fab fa-js-square"></i></th>
+                            <th><i class="fab fa-php"></i></th>
+                        </tr>
+                        <tr>
+                            <th colspan="7"><span class="table-gap"></span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td colspan="7"><span class="table-gap"></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="7">
+                                Click the plus button to add new presentations.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="7"><span class="table-gap"></span></td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="7" class="total-presentations">
+                                Total <span id="total-presentations"></span> presentations
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">
+                                <i class="fas fa-plus-circle"></i>
+                            </td>
+                            <td colspan="6">
+                                <i class="fas fa-eraser"></i>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </main>
+                <footer>
+                    <div>Credits:</div>
+                    <ul>
+                        <li>Draggable panes: <a href="https://ace.c9.io/" rel="nofollow" target="_blank">Ace</a></li>
+                        <li>Code editors: <a href="https://github.com/nathancahill/split/tree/master/packages/splitjs" rel="nofollow" target="_blank">Split.js</a></li>
+                        <li>Icons: <a href="https://fontawesome.com" rel="nofollow" target="_blank">Font Awesome</a></li>
+                        <li>Idea, design, UI, UX, development and functionality: <a href="https://github.com/barakpinchovski" rel="nofollow" target="_blank">Barak Pinchovski</a></li>
+                    </ul>
+                </footer>
+            </section>
+        </div>
+        
+            <!-- Libraries JS files -->
+        <script src="libraries/ace/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="libraries/split/split.min.js"></script>
+        <script src="libraries/libraries_init/ace.init.js" type="text/javascript"></script>
+        <script src="libraries/libraries_init/split.init.js" type="text/javascript"></script>
+            
+            <!-- Custom JS files -->
+        <script id="live-update-js"></script>
+        <script src="js/live_update.js"></script>
+        <script src="js/panes_layout_drawer.js"></script>
+        <script src="js/embedded_presentation.js"></script>
+        <script src="js/modal.js"></script>
+    </body>
+</html>
