@@ -12,17 +12,16 @@ var splitColumns = Split(['#html', '#css', '#js'], {
   direction: 'horizontal'
 });
 
-// let sizes = localStorage.getItem('split-sizes')
-//
-// if (sizes) {
-//   sizes = JSON.parse(sizes)
-// } else {
-//   sizes = [50, 50] // default sizes
-// }
-//
-// var split = Split(['#one', '#two'], {
-//   sizes: sizes,
-//   onDragEnd: function(sizes) {
-//     localStorage.setItem('split-sizes', JSON.stringify(sizes))
-//   },
-// });
+var splitExamples = Split(['#teaching-wrapper', '#examples-wrapper'], {
+  gutterSize: 2,
+  sizes: [99.5, 0.5],
+  direction: 'horizontal',
+  minSize: [190, 0.5]
+});
+
+var splitExamplesView = Split(['#code-examples', '#examples-view',  '#examples-list'], {
+  gutterSize: 5,
+  sizes: [40, 40, 20],
+  direction: 'horizontal',
+  minSize: [20, 20, 20]
+});

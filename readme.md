@@ -17,14 +17,20 @@
     1. Click the plus button.
     1. Add the name and the URL of the resource, then check the checkboxes of relevant editors for the resource.
     1. Refresh the page
-    1. ** List of resources is saved per browser. i.e. If you create the list on Chrome it won't be available in Incognito mode or other browsers (Edge, Firefox, etc.).
+    1. ** List of resources is saved per browser. i.e. If you create the list on Chrome it won't be available in Incognito mode or other browsers (Edge, Firefox, etc.), unless you export the Settings from the first and import it in others.
   1. Enjoy, you're all set!  
 
 ### Features
-##### v1.1
+##### v1.2
 - TBD
     - Code optimization
     - Accessibility implementation
+##### v1.1
+- Examples pane
+    - Example code is displayed in one pane
+    - The example code outcome is displayed in second pane
+    - Different examples can be selected
+ - Added the ability to export and import Settings
 ##### v1.0
 - Resizeable panes
 - Code editors

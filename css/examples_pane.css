@@ -1,0 +1,95 @@
+#teaching-wrapper,
+#teaching-wrapper + .gutter,
+#examples-wrapper,
+
+#examples-view,
+#examples-view + .gutter,
+#code-examples,
+#code-examples + .gutter,
+#examples-list {
+    display: inline-block;
+    float: left;
+}
+
+#teaching-wrapper,
+#examples-wrapper {
+    padding: 0;
+}
+
+#examples-wrapper {
+    display: flex;
+    font-family: sans-serif;
+}
+
+#examples-wrapper > main {
+    width: 100%;
+}
+
+#examples-wrapper i[class*=lightbulb] {
+    position: absolute;
+    top: 48%;
+    right: 0;
+    font-size: 1.5em;
+    background: #484747;
+    padding: 5px 5px 5px 9px;
+    border-radius: 5px 0 0 5px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.2s ease-in 0.2s;
+    box-shadow: -5px 0 18px 5px;
+    opacity: 0.2;
+}
+
+#examples-wrapper i[class*=lightbulb]:hover {
+    color: #f1f18c;
+    opacity: 1;
+}
+
+#examples-wrapper .contents  {
+    padding: 0;
+}
+
+#examples-wrapper iframe {
+    width: 100%;
+    height: 100%;
+}
+
+#examples-wrapper .contents  label {
+    cursor: pointer;
+}
+
+#examples-wrapper .contents  li {
+    list-style: none;
+    margin: 5px 0;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+#examples-wrapper .contents  li:hover {
+    background: #f1f18c;
+}
+
+#examples-wrapper .contents  li a {
+    color: blue;
+}
+
+#examples-view,
+#code-examples,
+#examples-list {
+    padding: 0;
+}
+
+#examples-list .selected-example {
+    background: #f1cf58;
+}
+
+#code-examples #example-code {
+    height: 100%;
+    width: 100%;
+}
+
+#code-examples #example-code .ace_content {
+    left: 0 !important;
+    transform: none !important;
+}
+

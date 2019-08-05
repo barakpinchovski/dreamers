@@ -4,6 +4,7 @@ const modal = {
   tableBody: document.querySelector('#modal > .content table tbody'),
   newPresentation: document.querySelector('#modal > .content table tfoot i[class*=plus]'),
   removeAll: document.querySelector('#modal > .content table tfoot i[class*=eraser]'),
+  exportSettings: document.querySelector('#modal > .content table tfoot i[class*=export]'),
   totalPresentations: document.querySelector('#modal > .content table tfoot #total-presentations'),
   presentations: document.getElementsByClassName('presentation'),
   listIndex: 0,
@@ -70,6 +71,24 @@ const modal = {
       dreamerSettings = JSON.parse(localStorage.getItem('dreamer'));
     }
     modal.totalPresentations.innerHTML = modal.presentations.length;
+  },
+
+  importSettings: (event) => {
+    if (event.target.files && event.target.files[0]) {
+      let reader = new FileReader();
+
+      // Closure to capture the file information.
+      reader.onload = (file => {
+        return (e) => {
+          if (e.target.result) {
+            localStorage.setItem('dreamer', e.target.result);
+          }
+        };
+      })(event.target.files[0]);
+
+      // Read in the image file as a data URL.
+      reader.readAsText(event.target.files[0]);
+    }
   }
 };
 
@@ -92,8 +111,20 @@ modal.newPresentation.addEventListener('click', (event) => {
 
 modal.removeAll.addEventListener('click', (event) => {
   if(confirm('Are you sure you want to remove all presentations?')) {
-    modal.updateLocalStorage(modal.getDefaultPresentationsObject());
+    modal.updateLocalStorage({ settings: { presentations: [], checkpoint: 1 } });
+    while (modal.presentations.length) {
+      let p = modal.presentations[0];
+      p.parentElement.removeChild(p);
+    }
     modal.totalPresentations.innerHTML = modal.presentations.length;
+  }
+});
+
+modal.exportSettings.addEventListener('click', (event) => {
+  if (localStorage.getItem('dreamer')) {
+    event.target.parentElement.setAttribute('href', `data:text/plain;charset=utf-8, ${encodeURIComponent(localStorage.getItem('dreamer'))}`);
+    event.target.parentElement.setAttribute('download', 'dreamerSettings.dat');
+    event.target.parentElement.click();
   }
 });
 

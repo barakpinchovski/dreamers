@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <title></title>
+    <meta name="application-name" content="Dreamer"/>
+    <meta name="description" content="Dreamer is a web-based teaching assistant tool for teaching HTML, CSS and JavaScript"/>
+    <meta name="keywords" content="HTML, WEB, BGU, Lecture, Teaching, Web Development, Education, Ben-Gurion University, Israel"/>
     <meta name="author" content="Barak Pinchovski"/>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="shortcut icon" type="image/png" href="imgs/favicon.png"/>
     
         <!-- Libraries CSS files -->
     <link rel="stylesheet" href="libraries/libraries_init/ace.init.css"/>
@@ -11,6 +15,7 @@
     <link rel="stylesheet" href="libraries/font-awesome/css/all.css"/>
     
         <!-- Custom CSS files -->
+    <link rel="stylesheet" href="css/examples_pane.css"/>
     <link rel="stylesheet" href="css/live_update.css"/>
     <style id="live-update-css"></style>
     <link rel="stylesheet" href="css/editors_layout_drawer.css"/>
@@ -18,52 +23,82 @@
     <link rel="stylesheet" href="css/modal.css"/>
 </head>
     <body>
-        <header class="content">
-            <!-- Editors layout drawer -->
-            <nav>
-                <i class="fas fa-align-justify"></i>
-                <i class="fas fa-align-left" ></i>
-                <i class="fas fa-align-center"></i>
-                <i class="fas fa-align-right"></i>
-                <i class="fas fa-sign-out-alt"></i>
-            </nav>
+        <section id="teaching-wrapper" class="split">
+            <header class="content">
+                <!-- Editors layout drawer -->
+                <nav>
+                    <i class="fas fa-align-justify"></i>
+                    <i class="fas fa-align-left" ></i>
+                    <i class="fas fa-align-center"></i>
+                    <i class="fas fa-align-right"></i>
+                    <i class="fas fa-sign-out-alt"></i>
+                </nav>
+        
+                <!-- Panes -->
+    <section id="html" class="split editor">&lt;!DOCTYPE html>
+    &lt;html>
+        &lt;head>
+            &lt;title>&lt;/title>
+        &lt;/head>
+        &lt;body>
+        &lt;/body>
+    &lt;/html></section>
+                
+                <section id="css" class="split editor"></section>
+                
+                <section id="js" class="split editor"></section>
+            
+            </header>
+            
+            <!-- Live update -->
+            <main id="live-update" class="split">
+            
+            </main>
+            
+            <!-- Embedded presentation -->
+            <footer id="embedded_presentation" class="split">
+                <nav>
+                    <i class="fas fa-cog" ></i>
+                    <i class="fas fa-arrow-left"></i>
+                    <label for="presentation-selector" hidden>Current Presentation</label>
+                    <input id="presentation-selector" size="1"/>
+                    <i class="fas fa-arrow-right"></i>
+                    <i class="far fa-eye"></i>
+                    <i class="fas fa-expand-arrows-alt"></i>
+                    <span id="current-presentation-name"></span>
+                </nav>
+                <iframe src="">Your browser doesn't support the iframe tag.</iframe>
+            </footer>
+        </section>
+        <section id="examples-wrapper" class="split">
+            <div class="toggle-examples">
+                <i class="far fa-lightbulb"></i>
+            </div>
+            <main>
+                <section id="code-examples" class="split">
+                    <div id="example-code" class="editor"></div>
+                </section>
+                <section id="examples-view" class="split">
+                    <iframe name="iframe-view"></iframe>
+                </section>
+                <aside id="examples-list" class="split">
+                    <ol class="examples-lists">
+                        <li>
+                            HTML
+                            <ol class="contents">
+                                <li><a href="examples/html/first-html-file.html">First HTML File</a></li>
+                                <li><a href="examples/html/comments.html">HTML Comments</a></li>
+                                <li><a href="examples/html/hello-world.html">Hello World</a></li>
+                                <li><a href="examples/html/html-entities-Q.html">HTML Entities - Q</a></li>
+                                <li><a href="examples/html/html-entities-A.html">HTML Entities - A</a></li>
+                                <li><a href="examples/html/metatags.html">Meta Tags</a></li>
+                            </ol>
+                        </li>
+                    </ol>
+                </aside>
+            </main>
+        </section>
     
-            <!-- Panes -->
-<section id="html" class="split editor">&lt;!DOCTYPE html>
-&lt;html>
-    &lt;head>
-        &lt;title>&lt;/title>
-    &lt;/head>
-    &lt;body>
-    &lt;/body>
-&lt;/html></section>
-            
-            <section id="css" class="split editor"></section>
-            
-            <section id="js" class="split editor"></section>
-        
-        </header>
-        
-        <!-- Live update -->
-        <main id="live-update" class="split">
-        
-        </main>
-        
-        <!-- Embedded presentation -->
-        <footer id="embedded_presentation" class="split">
-            <nav>
-                <i class="fas fa-cog" ></i>
-                <i class="fas fa-arrow-left"></i>
-                <label for="presentation-selector" hidden>Current Presentation</label>
-                <input id="presentation-selector" size="1"/>
-                <i class="fas fa-arrow-right"></i>
-                <i class="far fa-eye"></i>
-                <i class="fas fa-expand-arrows-alt"></i>
-                <span id="current-presentation-name"></span>
-            </nav>
-            <iframe src="">Your browser doesn't support the iframe tag.</iframe>
-        </footer>
-        
         <!-- Modal -->
         <div id="modal">
             <section class="content">
@@ -115,10 +150,18 @@
                         </tr>
                         <tr>
                             <td colspan="1">
-                                <i class="fas fa-plus-circle"></i>
+                                <i class="fas fa-plus-circle" title="Add a New Presentation"></i>
                             </td>
-                            <td colspan="6">
-                                <i class="fas fa-eraser"></i>
+                            <td colspan="1">
+                                <i class="fas fa-eraser" title="Remove All Presentations"></i>
+                            </td>
+                            <td colspan="1">
+                                <a><i class="fas fa-file-export" title="Export Settings"></i></a>
+                            </td>
+                            <td colspan="1">
+                                <input id="import-settings" type="file" hidden onchange="modal.importSettings(event)"/><label for="import-settings"><i class="fas fa-file-import" title="Import Settings"></i></label>
+                            </td>
+                            <td colspan="3">
                             </td>
                         </tr>
                         </tfoot>
@@ -149,5 +192,7 @@
         <script src="js/editors_layout_drawer.js"></script>
         <script src="js/embedded_presentation.js"></script>
         <script src="js/modal.js"></script>
+        <script src="js/examples_pane.js"></script>
+        <script src="js/examples_list.js"></script>
     </body>
 </html>
