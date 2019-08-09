@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS selectors example</title>
+        <style>
+            /* CSS selector that applies to all elements by attribute */
+            p { background-color: red; }
+            [class] { background-color: orange; }
+            [class="purple"] { background-color: purple; }
+            [class*="ome"] { background-color: blue; }
+            div { background-color: green; }
+            span { background-color: yellow; }
+        </style>
+    </head>
+    <body>
+        <p>This is a paragraph, block element.</p>
+        <p class="p">This is another paragraph, block element.</p>
+        <div>
+            <span class="some-span">This is a span inside a div.</span>
+            <p class="purple">This is a paragraph inside a div.</p>
+        </div>
+    </body>
+</html> 

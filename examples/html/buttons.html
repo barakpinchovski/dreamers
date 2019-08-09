@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>buttons example</title>
+    </head>
+    <body>
+		<button></button>
+		
+		<br/><br/>
+		
+		<button>Button text</button>
+		
+		<br/><br/>
+		
+		<button disabled>Disabled button</button>
+		
+		<br/><br/>
+		
+		<button autofocus>Autofocus button</button>
+		
+		<br/><br/><br/>
+		<hr/>
+		<br/>
+		
+		<form method="GET" action="404.php" id="form404">
+			<fieldset>
+				<legend>Examples for buttons in a form</legend>
+				<label for="uname">Username</label><input id="uname"/>
+
+				<br/><br/>
+
+				<label for="pass">Password</label><input id="pass" type="password"/>
+
+				<br/><br/>
+
+				<label for="color">Color</label><input id="color" type="color"/>
+				
+				<br/><br/>
+				
+				<button type="reset">Reset all form inputs</button>
+				<button type="submit">SUBMIT!</button>
+			</fieldset>
+		</form>
+		
+		<br/><br/>
+		
+		<button type="submit" form="form404" formaction="500.php" formmethod="post" formenctype="multipart/form-data" formtarget="_blank">
+			Sneaky little button...
+		</button>
+    </body>
+</html> 

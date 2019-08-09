@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>inline-block example</title>
+		<style>
+			a:not(.inline-block) { width: 300px; height: 300px; }
+			p:not(.inline-block) { width: 300px; height: 300px; }
+			.inline-block {
+				display: inline-block;
+				width: 30%;
+				height: 30px;
+			}
+		</style>
+    </head>
+    <body>
+		<a>a element</a><a>is an inline element</a>
+		<p>p element</p><p>is a block element</p>
+		
+		<hr/>
+		<a class="inline-block">a is now an inline-block element</a>
+		<p class="inline-block">p is now an inline-block element</p>
+    </body>
+</html> 

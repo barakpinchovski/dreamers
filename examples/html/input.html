@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>input example</title>
+		<style>
+			table { border-collapse: collapse; text-align: center; }
+			td { padding: 10px 5px; background: #f1f1f1; }
+			label { display: inline-block; width: 100px; }
+			thead { font-weight: bold; }
+		</style>
+    </head>
+    <body>
+		<strong>Form Inputs:</strong>
+		<br/><br/>
+		
+		<strong>General input structure:</strong><br/>
+		<strong>&lt;input type="TYPE" name="NAME" value="DEFAULT VALUE"/&gt;</strong>
+		<br/><br/>
+		
+		<strong>Global attributes:</strong><br/>
+		<strong>placeholder, name, value, required, readonly, disabled, size, id, class, autocomplete</strong>
+		<br/><br/>
+		
+		<form>
+			<table border="1">
+				<thead>
+					<tr>
+						<td>input type</td><td>result</td><td>attributes</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><label for="text-input">text (default)</label></td>
+						<td><input id="text-input"/></td>
+					</tr>
+					<tr>
+						<td><label for="number-input">number</label></td>
+						<td><input id="number-input" type="number" min="5" max="12" step="2"/></td>
+						<td>max, min, step, value</td>
+					</tr>
+					<tr>
+						<td><label for="password-input">password</label></td>
+						<td><input id="password-input" type="password"/></td>
+					</tr>
+					<tr>
+						<td><label for="email-input">email</label></td>
+						<td><input multiple id="email-input" type="email"/></td>
+						<td>multiple</td>
+					</tr>
+					<tr>
+						<td><label for="date-input">date</label></td>
+						<td><input id="date-input" type="date"/></td>
+					</tr>
+					<tr>
+						<td><label for="time-input">time</label></td>
+						<td><input id="time-input" type="time"/></td>
+					</tr>
+					<tr>
+						<td><label for="datetime-local-input">datetime-local</label></td>
+						<td><input id="datetime-local-input" type="datetime-local"/></td>
+					</tr>
+					<tr>
+						<td><label for="color-input">color</label></td>
+						<td><input id="color-input" type="color"/></td>
+					</tr>
+					<tr>
+						<td><label for="file-input">file</label></td>
+						<td><input multiple id="file-input" type="file""/></td>
+						<td>multiple, accept</td>
+					</tr>
+					<tr>
+						<td><label for="checbox-input">checbox</label></td>
+						<td><input id="checbox-input" type="checkbox"/></td>
+					</tr>
+					<tr>
+						<td>radio</td>
+						<td>
+							<label for="radio1-input">radio 1</label><input id="radio1-input" type="radio" name="my-radio" value="radio1" checked/>
+							<label for="radio2-input">radio 2</label><input id="radio2-input" type="radio" name="my-radio" value="radio2"/></td>
+					</tr>
+					<tr>
+						<td><label for="range-input">range</label></td>
+						<td><input id="range-input" type="range"/></td>
+						<td>max, min, step, value</td>
+					</tr>
+					<tr>
+						<td><label for="button-input">button</label></td>
+						<td><input id="button-input" type="button" value="Button Value"/></td>
+					</tr>
+					<tr>
+						<td><label for="search-input">search</label></td>
+						<td><input id="search-input" type="search"/></td>
+					</tr>
+					<tr>
+						<td><label for="url-input">url</label></td>
+						<td><input id="url-input" type="url"/></td>
+					</tr>
+					<tr>
+						<td><label for="week-input">week</label></td>
+						<td><input id="week-input" type="week"/></td>
+					</tr>
+					<tr>
+						<td><label for="month-input">month</label></td>
+						<td><input id="month-input" type="month"/></td>
+					</tr>
+					<tr>
+						<td><label for="hidden-input">hidden</label></td>
+						<td><input id="hidden-input" type="hidden" value=""/></td>
+					</tr>
+					<tr>
+						<td><label for="image-input">image (as submit)</label></td>
+						<td><input id="image-input" type="image" src="https://www.w3schools.com/tags/img_submit.gif" alt="Submit" width="48" height="48"></td>
+					</tr>
+					<tr>
+						<td><label for="submit-input">submit</label></td>
+						<td><input id="submit-input" type="submit"/></td>
+					</tr>
+					<tr>
+						<td><label for="reset-input">reset</label></td>
+						<td><input id="reset-input" type="reset"/></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<br/>
+			
+			<br/>
+			
+		</form>
+    </body>
+</html> 

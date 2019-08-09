@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Drag and drop example</title>
+<style>
+    div {
+        width:512px;
+        height:404px;
+        padding:10px;
+        border:1px solid #aaaaaa;
+    }
+    img {
+        width:512px;
+        height:384px;    
+    }
+</style>
+<script>
+    allowDrop = event => event.preventDefault();
+
+    drag = event => event.dataTransfer.setData("image", event.target.id);
+
+    drop = event => {
+		event.preventDefault();
+		let image = event.dataTransfer.getData("image");
+		event.target.appendChild(document.getElementById(image));
+    }
+</script>
+</head>
+<body>
+    <h3>Drag the Penguins image from one box to another:</h3>
+    <div ondrop="drop(event)" ondragover="allowDrop(event)" >
+        <span>Box 1</span>
+    </div>
+    <br>
+    <div ondrop="drop(event)" ondragover="allowDrop(event)">
+        <span>Box 2</span>
+        <img id="penguins-img" src="../media/imgs/penguins.jpg" alt="penguins" draggable="true" ondragstart="drag(event)"/>
+	</div>
+</body>
+</html>

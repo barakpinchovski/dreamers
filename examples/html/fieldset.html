@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>fieldset example</title>
+    </head>
+    <body>
+		<form>
+			<fieldset>
+				<legend>User Sign Up</legend>
+				<label for="text-input">Name</label>
+				<input id="text-input"/>
+				<br/><br/>
+				<label for="number-input">ID</label>
+				<input id="number-input" type="number"/>
+				<br/><br/>
+				<label for="password-input">password</label>
+				<input id="password-input" type="password"/>
+				<br/><br/>
+				Select your favourite food:
+				<br/>
+				<select name="food" multiple>
+					<option value="milkshake">Milkshake</option>
+					<option value="sausage">Sausage</option>
+					<option value="pizza" selected>Pizza</option>
+					<option value="burger" selected>Burger</option>
+				</select>
+				<br/><br/>
+				<label for="color-input">Select your favourite color:</label>
+				<input id="color-input" type="color"/>
+				<br/><br/>
+				<input type="submit"/>
+			</fieldset>
+		</form>
+    </body>
+</html> 

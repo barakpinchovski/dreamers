@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS selectors example</title>
+        <style>
+            /* CSS selector that applies to all elements according to selectors chain  */
+            p { background-color: red; }
+            body p { background-color: green; }
+            p.p { background-color: orange; }
+            p[class*="p"] { background-color: pink; }
+            p#p { background-color: yellow; }
+
+            body div p#p.purple { background-color: gray; }
+            body > div span.some-span + p#p.purple { background-color: blue; }
+        </style>
+    </head>
+    <body>
+        <p>This is a paragraph, block element.</p>
+        <p class="p">This is another paragraph, block element.</p>
+        <div>
+            <span class="some-span">This is a span inside a div.</span>
+            <p id="p" class="purple">This is a paragraph inside a div.</p>
+        </div>
+    </body>
+</html> 

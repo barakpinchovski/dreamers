@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS pseudo elements example</title>
+        <style>
+            li::before {
+                content: '😜';
+            }
+            li:empty::before {
+                content: '😞';
+            }
+        </style>
+    </head>
+    <body>
+        <ul type="none">
+            Favourite food:
+            <li>
+                Burger
+            </li>
+            <li>
+                Pizza
+            </li>
+            <li></li>
+        </ul>
+    </body>
+</html> 
