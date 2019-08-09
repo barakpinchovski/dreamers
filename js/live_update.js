@@ -10,7 +10,7 @@ for (let editor of liveUpdate.editors) {
 }
 
 liveUpdate.sync = (editorId, event) => {
-  const editorContent = event.target.parentElement.querySelector('.ace_content').innerText;
+  let editorContent = event.target.parentElement.querySelector('.ace_content').innerText;
 
   switch (editorId) {
     case 'html':
@@ -22,12 +22,13 @@ liveUpdate.sync = (editorId, event) => {
     case 'js':
       if (event.ctrlKey && event.key === "Enter") {
         let newJs = document.createElement('script');
-        newJs.innerHTML = ` try { let liveUpdateExec = (data) => { ${
-          editorContent.replace(/document.body/g, "document.querySelector('#live-update')")
-            .replace(/document.getElementsByTagName('body')/g, "document.querySelectorAll('#live-update')")
-            .replace(/document.getElementsByTagName("body")/g, "document.querySelectorAll('#live-update')")
-            .replace(/body/g, "#live-update")
-          }}; liveUpdateExec(); } catch (err) {}`;
+        newJs.id =  "live-update-js";
+        editorContent =
+          editorContent
+          .replace(/document\.body/g, "document.querySelector('#live-update')")
+          .replace(/document\.getElementsByTagName\('body'\)/g, "document.querySelectorAll('#live-update')")
+            .replace(/document\.getElementsByTagName\("body"\)/g, "document.querySelectorAll('#live-update')");
+        newJs.innerHTML = ` try { let liveUpdateExec = (data) => { ${editorContent}}; liveUpdateExec(); } catch (err) {}`;
         document.body.replaceChild(newJs, liveUpdate.js);
         liveUpdate.js = newJs;
         console.log('%cJavaScript was executed.', 'background: #ffffc6; color: #8b8b00;');
