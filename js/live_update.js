@@ -17,12 +17,17 @@ liveUpdate.sync = (editorId, event) => {
       liveUpdate.main.innerHTML = editorContent;
       break;
     case 'css':
-      liveUpdate.css.innerHTML = editorContent.replace("body", "#live-update");
+      liveUpdate.css.innerHTML = editorContent.replace(/body/g, "").replace(/.+{/g, "#live-update $&");
       break;
     case 'js':
       if (event.ctrlKey && event.key === "Enter") {
         let newJs = document.createElement('script');
-        newJs.innerHTML = ` try { let liveUpdateExec = (data) => { ${editorContent.replace("body", "#live-update")} }; liveUpdateExec(); } catch (err) {}`;
+        newJs.innerHTML = ` try { let liveUpdateExec = (data) => { ${
+          editorContent.replace(/document.body/g, "document.querySelector('#live-update')")
+            .replace(/document.getElementsByTagName('body')/g, "document.querySelectorAll('#live-update')")
+            .replace(/document.getElementsByTagName("body")/g, "document.querySelectorAll('#live-update')")
+            .replace(/body/g, "#live-update")
+          }}; liveUpdateExec(); } catch (err) {}`;
         document.body.replaceChild(newJs, liveUpdate.js);
         liveUpdate.js = newJs;
         console.log('%cJavaScript was executed.', 'background: #ffffc6; color: #8b8b00;');

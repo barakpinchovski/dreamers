@@ -26,6 +26,8 @@
 }
 
 #examples-wrapper i[class*=lightbulb] {
+    transition: color 0.8s ease-in, opacity 0.1s linear;
+    /*transition-property: color, opacity;*/
     position: absolute;
     top: 48%;
     right: 0;
@@ -35,13 +37,12 @@
     border-radius: 5px 0 0 5px;
     color: white;
     cursor: pointer;
-    transition: color 0.2s ease-in 0.2s;
     box-shadow: -5px 0 18px 5px;
     opacity: 0.2;
 }
 
 #examples-wrapper i[class*=lightbulb]:hover {
-    color: #f1f18c;
+    color: #ffff00;
     opacity: 1;
 }
 
@@ -71,12 +72,34 @@
 
 #examples-wrapper .contents  li a {
     color: blue;
+    width: 100%;
+    display: block;
 }
 
 #examples-view,
 #code-examples,
 #examples-list {
     padding: 0;
+}
+
+#examples-list {
+    overflow-y: scroll;
+}
+
+.examples-lists > li {
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+#examples-list h3 {
+    padding-left: 20px;
+}
+
+#examples-list .contents li[data-subject]:before {
+    content: attr(data-subject);
+    display: block;
+    margin: 1.2em 0 0.5em;
+    font-weight: bold;
 }
 
 #examples-list .selected-example {

@@ -6,4 +6,5 @@ body, main {
 main.split {
   border: 0;
   padding: 8px; /* Default margin value for the body element in index.html */
+  overflow-y: scroll;
 }

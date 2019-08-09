@@ -98,7 +98,7 @@ setEditorsSizesByPresentation = (presentationNumber) => {
     dreamerSettings = JSON.parse(dreamerSettings);
     let presentationEditors = dreamerSettings.settings.presentations[presentationNumber - 1].editors;
     let sizes = [33.333, 33.333, 33.333];
-    if (!presentationEditors.html || presentationEditors.html && !presentationEditors.css && !presentationEditors.js) {
+    if (!presentationEditors.css && !presentationEditors.js) {
       sizes = [80, 10, 10];
     }
     else if (presentationEditors.css && !presentationEditors.js) {

@@ -18,7 +18,9 @@ function setIframeView(event) {
   }
   setTimeout(() => {
     const html = `<!DOCTYPE html>
-${examplesList.iframeView.contentDocument.querySelector('html').outerHTML}`;
+<html lang="en">
+${examplesList.iframeView.contentDocument.querySelector('html').innerHTML}
+</html>`;
     examplesHtmlEditor.setValue(html);
     examplesHtmlEditor.clearSelection();
     event.target.classList.add('selected-example');

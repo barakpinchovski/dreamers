@@ -1,6 +1,6 @@
 # Dreamers
 ### A web-based teaching assistant tool for HTML, CSS and vanilla (plain) JavaScript
-##### By [Barak Pinchovski](https://github.com/barakpinchovski) 
+##### By [Barak Pinchovski](https://www.linkedin.com/in/barakpinch) 
 
 ----
 
@@ -21,9 +21,8 @@
   1. Enjoy, you're all set!  
 
 ### Features
-##### v1.2
-- TBD
-    - Code optimization
+##### v1.2 - TBD
+    - Code rewrite and optimization
     - Accessibility implementation
 ##### v1.1
 - Examples pane
