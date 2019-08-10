@@ -130,3 +130,11 @@
 #modal footer a:visited {
     color: blue;
 }
+
+#modal #configurations {
+    padding: 30px;
+}
+
+#modal #configurations input {
+    margin: 0 5px;
+}

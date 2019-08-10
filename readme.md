@@ -31,6 +31,8 @@
 - Exercises panes
     - Exercise code maintains at latest state
     - Useful for on-going exercises
+ - Default font size for editors in Settings
+    - By default, editors font size will be set according to the value of the default font size in settings
 ##### v0.2
 - Examples pane
     - Example code is displayed in one pane

@@ -7,6 +7,7 @@ const modal = {
   exportSettings: document.querySelector('#modal > .content table tfoot i[class*=export]'),
   totalPresentations: document.querySelector('#modal > .content table tfoot #total-presentations'),
   presentations: document.getElementsByClassName('presentation'),
+  defaultEditorsFontSize: document.querySelector('#editors-font-size'),
   listIndex: 0,
 
   updateLocalStorage: (data) => {
@@ -89,6 +90,23 @@ const modal = {
       // Read in the image file as a data URL.
       reader.readAsText(event.target.files[0]);
     }
+  },
+
+  getDefaultEditorsFontSize: () => {
+    let dreamerSettings = localStorage.getItem('dreamer');
+    if (dreamerSettings) {
+      dreamerSettings = JSON.parse(dreamerSettings);
+      return dreamerSettings.hasOwnProperty('editorsFontSize') ? dreamerSettings.editorsFontSize : 12;
+    }
+  },
+
+  updateDefaultFontSize: (e) => {
+    let dreamerSettings = localStorage.getItem('dreamer');
+    if (dreamerSettings && e.target.value && Number(e.target.value)) {
+      dreamerSettings = JSON.parse(dreamerSettings);
+      dreamerSettings.editorsFontSize = Number(e.target.value);
+      localStorage.setItem('dreamer', JSON.stringify(dreamerSettings));
+    }
   }
 };
 
@@ -157,3 +175,7 @@ removePresentation = (event, index) => {
     modal.initPresentationsList();
   }
 };
+
+modal.defaultEditorsFontSize.value = modal.getDefaultEditorsFontSize();
+
+modal.defaultEditorsFontSize.addEventListener('change', modal.updateDefaultFontSize);
