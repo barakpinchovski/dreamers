@@ -25,3 +25,10 @@ var splitExamplesView = Split(['#code-examples', '#examples-view',  '#examples-l
   direction: 'horizontal',
   minSize: [20, 20, 20]
 });
+
+var splitExercise = Split(['#exercise-code', '#exercise-view'], {
+  gutterSize: 5,
+  sizes: [50, 50],
+  direction: 'horizontal',
+  minSize: [20, 20]
+});

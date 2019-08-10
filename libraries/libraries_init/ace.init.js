@@ -17,3 +17,7 @@ let examplesHtmlEditor = ace.edit('example-code');
 examplesHtmlEditor.setTheme("ace/theme/crimson_editor");
 examplesHtmlEditor.session.setMode("ace/mode/html");
 examplesHtmlEditor.setReadOnly(true);
+
+let exerciseCodeEditor = ace.edit("exercise-code-editor");
+exerciseCodeEditor.setTheme("ace/theme/crimson_editor");
+exerciseCodeEditor.session.setMode("ace/mode/html");

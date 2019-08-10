@@ -1,0 +1,29 @@
+#live-exercise {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s linear;
+    z-index: 4;
+}
+
+#live-exercise.show {
+    top: 0;
+}
+
+#exercise-code,
+#exercise-code  + .gutter,
+#exercise-view {
+    display: inline-block;
+    float: left;
+    padding: 0;
+}
+
+#exercise-code-editor {
+    height: 100%;
+}
+
+#exercise-view {
+    background-color: white;
+}

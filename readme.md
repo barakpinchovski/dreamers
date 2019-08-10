@@ -21,16 +21,24 @@
   1. Enjoy, you're all set!  
 
 ### Features
-##### v1.2 - TBD
-    - Code rewrite and optimization
+##### v1.1 - TBD
     - Accessibility implementation
-##### v1.1
+##### v1 - TBD
+    - Code rewrite and optimization
+##### v0.3
+- Editors Zoom Widget
+    - Allows increasing, decreasing and resetting the editors font size
+- Exercises panes
+    - Exercise code maintains at latest state
+    - Useful for on-going exercises
+##### v0.2
 - Examples pane
     - Example code is displayed in one pane
     - The example code outcome is displayed in second pane
     - Different examples can be selected
  - Added the ability to export and import Settings
-##### v1.0
+ - Added PHP editor support in localhost
+##### v0.1
 - Resizeable panes
 - Code editors
     - Code editors layout drawer

@@ -25,7 +25,9 @@
     width: 100%;
 }
 
-#examples-wrapper i[class*=lightbulb] {
+#examples-wrapper i[class*=lightbulb],
+#editors-zoom,
+#exercise-toggle {
     transition: color 0.8s ease-in, opacity 0.1s linear;
     /*transition-property: color, opacity;*/
     position: absolute;
@@ -37,13 +39,40 @@
     border-radius: 5px 0 0 5px;
     color: white;
     cursor: pointer;
-    box-shadow: -5px 0 18px 5px;
     opacity: 0.2;
+    z-index: 5;
 }
 
+#examples-wrapper i[class*=lightbulb] {
+    width: 38px;
+    padding-left: 12px;
+}
+
+#editors-zoom {
+    top: 36%;
+    width: 38px;
+    height: 115px;
+}
+
+#editors-zoom > i {
+    margin: 6px 0;
+}
+
+#examples-wrapper i[class*=lightbulb]:hover,
+#editors-zoom:hover,
+#exercise-toggle:hover {
+    opacity: 1;
+}
+
+#exercise-toggle {
+    top: 51.5%;
+    width: 38px;
+}
+
+#exercise-toggle > i:hover,
+#editors-zoom > i:hover,
 #examples-wrapper i[class*=lightbulb]:hover {
     color: #ffff00;
-    opacity: 1;
 }
 
 #examples-wrapper .contents  {

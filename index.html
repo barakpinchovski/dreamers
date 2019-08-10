@@ -20,10 +20,16 @@
     <style id="live-update-css"></style>
     <link rel="stylesheet" href="css/editors_layout_drawer.css"/>
     <link rel="stylesheet" href="css/embedded_presentation.css"/>
+    <link rel="stylesheet" href="css/exercise_pane.css"/>
     <link rel="stylesheet" href="css/modal.css"/>
 </head>
     <body>
         <section id="teaching-wrapper" class="split">
+            <div id="editors-zoom">
+                <i class="fas fa-search-plus"></i>
+                <i class="fas fa-search"></i>
+                <i class="fas fa-search-minus"></i>
+            </div>
             <header class="content">
                 <!-- Editors layout drawer -->
                 <nav>
@@ -36,13 +42,13 @@
         
                 <!-- Panes -->
     <section id="html" class="split editor">&lt;!DOCTYPE html>
-    &lt;html>
-        &lt;head>
-            &lt;title>&lt;/title>
-        &lt;/head>
-        &lt;body>
-        &lt;/body>
-    &lt;/html></section>
+&lt;html>
+    &lt;head>
+        &lt;title>&lt;/title>
+    &lt;/head>
+    &lt;body>
+    &lt;/body>
+&lt;/html></section>
                 
                 <section id="css" class="split editor"></section>
                 
@@ -154,6 +160,24 @@
                 </aside>
             </main>
         </section>
+        <div id="exercise-toggle">
+            <i class="fas fa-code"></i>
+        </div>
+        <div id="live-exercise">
+            <div id="exercise-code" class="split">
+                <div id="exercise-code-editor" class="editor">&lt;!DOCTYPE html>
+&lt;html>
+    &lt;head>
+        &lt;title>&lt;/title>
+    &lt;/head>
+    &lt;body>
+    &lt;/body>
+&lt;/html></div>
+            </div>
+            <iframe id="exercise-view" class="split">
+    
+            </iframe>
+        </div>
     
         <!-- Modal -->
         <div id="modal">
@@ -250,5 +274,7 @@
         <script src="js/modal.js"></script>
         <script src="js/examples_pane.js"></script>
         <script src="js/examples_list.js"></script>
+        <script src="js/exercise_pane.js"></script>
+        <script src="js/editors_zoom.js"></script>
     </body>
 </html>
