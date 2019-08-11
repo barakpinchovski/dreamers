@@ -25,8 +25,10 @@ liveUpdate.sync = (editorId, event) => {
         newJs.id =  "live-update-js";
         editorContent =
           editorContent
-          .replace(/document\.body/g, "document.querySelector('#live-update')")
-          .replace(/document\.getElementsByTagName\('body'\)/g, "document.querySelectorAll('#live-update')")
+            .replace(/document\.querySelector\('body'\)/g, "document.querySelector('#live-update')")
+            .replace(/document\.querySelectorAll\('body'\)/g, "document.querySelectorAll('#live-update')")
+            .replace(/document\.body/g, "document.querySelector('#live-update')")
+            .replace(/document\.getElementsByTagName\('body'\)/g, "document.querySelectorAll('#live-update')")
             .replace(/document\.getElementsByTagName\("body"\)/g, "document.querySelectorAll('#live-update')");
         newJs.innerHTML = ` try { let liveUpdateExec = (data) => { ${editorContent}}; liveUpdateExec(); } catch (err) {}`;
         document.body.replaceChild(newJs, liveUpdate.js);
