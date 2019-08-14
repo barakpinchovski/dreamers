@@ -17,7 +17,11 @@ liveUpdate.sync = (editorId, event) => {
       liveUpdate.main.innerHTML = editorContent;
       break;
     case 'css':
-      liveUpdate.css.innerHTML = editorContent.replace(/body/g, "").replace(/.+{/g, "#live-update $&");
+      liveUpdate.css.innerHTML =
+        editorContent.replace(/body/g, "").replace(/.+{/g, "#live-update $&")
+          .replace(/#live-update (\@(.*?)\{)(?!({))+/gi, (media) => {
+            return (media.substr('#live-update'.length));
+          });
       break;
     case 'js':
       if (event.ctrlKey && event.key === "Enter") {
