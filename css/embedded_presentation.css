@@ -55,7 +55,7 @@ footer > nav i:hover {
 
 #current-presentation-name {
   font-family: sans-serif;
-  top: auto;
+  top: 25px;
   width: 100%;
   color: white;
   padding: 10px;
