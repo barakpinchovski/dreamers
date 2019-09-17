@@ -84,6 +84,7 @@ presentation.toggle.addEventListener('click', (event) => {
   }
   else {
     splitRows.setSizes(sizeMemory);
+    resizeEditors();
   }
 });
 
@@ -108,5 +109,6 @@ setEditorsSizesByPresentation = (presentationNumber) => {
       sizes = [40, 10, 50];
     }
     splitColumns.setSizes(sizes);
+    resizeEditors();
   }
 };

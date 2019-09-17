@@ -16,16 +16,20 @@ panesLayoutDrawer.root.addEventListener('mouseleave', (event) => {
 
 panesLayoutDrawer.justify.addEventListener('click', () => {
   splitColumns.setSizes([33.333, 33.333, 33.333]);
+  resizeEditors();
 });
 
 panesLayoutDrawer.left.addEventListener('click', () => {
   splitColumns.setSizes([80, 10, 10]);
+  resizeEditors();
 });
 
 panesLayoutDrawer.center.addEventListener('click', () => {
   splitColumns.setSizes([40, 50, 10]);
+  resizeEditors();
 });
 
 panesLayoutDrawer.right.addEventListener('click', () => {
   splitColumns.setSizes([10, 10, 80]);
+  resizeEditors();
 });

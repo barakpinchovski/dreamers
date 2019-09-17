@@ -5,6 +5,7 @@ const exercise = {
 
   togglePane: (e) => {
     exercise.pane.classList.toggle('show');
+    resizeEditors();
   },
 
   initContent: () => {

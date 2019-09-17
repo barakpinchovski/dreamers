@@ -34,3 +34,17 @@ let exerciseCodeEditor = ace.edit("exercise-code-editor");
 exerciseCodeEditor.setTheme("ace/theme/crimson_editor");
 exerciseCodeEditor.session.setMode("ace/mode/html");
 exerciseCodeEditor.setFontSize(Number(dreamerSettingsDefaultZoom));
+
+setTimeout(() => {
+  document.querySelectorAll('.gutter').forEach((gutter) => {
+    gutter.addEventListener('mouseup', resizeEditors);
+  });
+}, 0);
+
+let resizeEditors = () => {
+  htmlEditor.resize();
+  cssEditor.resize();
+  jsEditor.resize();
+  examplesHtmlEditor.resize();
+  exerciseCodeEditor.resize();
+};

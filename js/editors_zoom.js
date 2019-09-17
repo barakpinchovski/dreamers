@@ -20,6 +20,7 @@ let editorsZoom = {
       let newFontSize =   !level ? defaultZoom : currentFontSize + level;
       editorsZoom.editors[i].setFontSize(newFontSize);
     }
+    resizeEditors();
   }
 };
 
