@@ -5,6 +5,7 @@ const modal = {
   newPresentation: document.querySelector('#modal > .content table tfoot i[class*=plus]'),
   removeAll: document.querySelector('#modal > .content table tfoot i[class*=eraser]'),
   exportSettings: document.querySelector('#modal > .content table tfoot i[class*=export]'),
+  exampleSettings: document.querySelector('#modal > .content table tfoot i[class*=file-code]'),
   totalPresentations: document.querySelector('#modal > .content table tfoot #total-presentations'),
   presentations: document.getElementsByClassName('presentation'),
   defaultEditorsFontSize: document.querySelector('#editors-font-size'),
@@ -179,3 +180,9 @@ removePresentation = (event, index) => {
 modal.defaultEditorsFontSize.value = modal.getDefaultEditorsFontSize();
 
 modal.defaultEditorsFontSize.addEventListener('change', modal.updateDefaultFontSize);
+
+modal.exampleSettings.addEventListener('click', () => {
+  const exampleSettings = '{"settings":{"presentations":[{"url":"https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21226&authkey=AD5XM3A4SADXtSA&em=2","name":"Course Intro","editors":{"html":false,"css":false,"js":false,"php":false}},{"url":"https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21227&authkey=ABu34ud-GpuJXDc&em=2","name":"Intro to Web","editors":{"html":false,"css":false,"js":false,"php":false}},{"url":"https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21232&authkey=AGEzgK9R8MS08FE&em=2","name":"HTML5","editors":{"html":true,"css":false,"js":false,"php":false}},{"url":"https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21228&authkey=AHrBdJ9VjGNgTzY&em=2","name":"CSS3","editors":{"html":true,"css":true,"js":false,"php":false}},{"url":"https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21229&authkey=AFJmGBOgf6evnB4&em=2","name":"JavaScript","editors":{"html":true,"css":false,"js":true,"php":false}},{"url":"https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21230&authkey=ABjQU5k2Q7PgVdM&em=2","name":"PHP7","editors":{"html":true,"css":false,"js":false,"php":true}},{"url":"https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21231&authkey=AJEpFvtejnqsJsU&em=2","name":"The Next Episode","editors":{"html":true,"css":false,"js":true,"php":false}}],"checkpoint":6},"exercise":"","editorsFontSize":16}';
+  dreamerSettings = localStorage.setItem('dreamer', exampleSettings);
+  document.location.reload();
+});

@@ -138,3 +138,12 @@
 #modal #configurations input {
     margin: 0 5px;
 }
+
+#modal .actions {
+    text-align: center;
+}
+
+#modal tfoot i {
+    padding: 15px 50px;
+    font-size: 1.6em;
+}
