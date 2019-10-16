@@ -115,7 +115,7 @@
     overflow-y: scroll;
 }
 
-.examples-lists > li {
+.examples > li {
     margin-top: 15px;
     cursor: pointer;
 }

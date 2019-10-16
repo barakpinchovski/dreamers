@@ -1,7 +1,7 @@
 const examplesList = {
   exampleCode: document.querySelector('div[id="example-code"]'),
   iframeView: document.querySelector('iframe[name="iframe-view"]'),
-  examplesLists: document.querySelector('.examples-lists'),
+  examplesLists: document.querySelector('.examples'),
   lastClickedExample: undefined
 };
 
