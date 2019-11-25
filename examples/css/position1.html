@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>position example</title>
+		<style>
+		body { position: relative; }
+		div { 
+			text-align: center;
+			padding: 50px;
+			border: 1px solid black;
+			margin: 100px 0;
+			background-color: lightyellow; font-weight: bold;
+		}
+		.sticky-elem { 
+			position: sticky;
+			top: 0;
+			background: yellow;
+		}
+		.fixed-elem {
+			position: fixed;
+			right: 50px;
+			bottom: 50px;
+			background-color: orange; font-weight: bold;
+		}
+		.relative-elem {
+			position: relative;
+			left: 200px;
+			background-color: lightblue; font-weight: bold;
+		}
+		.absolute-elem {
+			position: absolute;
+			bottom: 0;
+			left: 500px;
+			margin: 0;
+			background-color: violet; font-weight: bold;
+		}
+		.static-elem {
+			position: static;
+			background-color: lightgreen; font-weight: bold;
+		}
+		</style>
+    </head>
+    <body>
+		<div class="sticky-elem">sticky element</div>
+		<div class="fixed-elem">fixed element</div>
+		<div class="relative-elem">relative element</div> <!-- relative to its natural position -->
+		<div class="absolute-elem">absolute element</div> <!-- absolute, in relation to its parent -->
+		<div class="static-elem">static element (default)</div>
+		<div class="static-elem">static element (default)</div>
+		<div class="static-elem">static element (default)</div>
+		<div class="relative-elem">relative element</div>
+		<div class="static-elem">static element (default)</div>
+		<!-- z-index (fixed+relative), overflow (relative), margin (last static) -->
+    </body>
+</html> 
