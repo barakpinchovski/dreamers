@@ -9,6 +9,10 @@ const modal = {
   totalPresentations: document.querySelector('#modal > .content table tfoot #total-presentations'),
   presentations: document.getElementsByClassName('presentation'),
   defaultEditorsFontSize: document.querySelector('#editors-font-size'),
+  currentGroup: document.querySelector('#current-group'),
+  groupsList: document.querySelector('#groups-data'),
+  addNewGroup: document.querySelector('#add-new-group'),
+  newGroupInput: document.querySelector('#new-group-title'),
   listIndex: 0,
 
   updateLocalStorage: (data) => {
@@ -108,11 +112,48 @@ const modal = {
       dreamerSettings.editorsFontSize = Number(e.target.value);
       localStorage.setItem('dreamer', JSON.stringify(dreamerSettings));
     }
+  },
+
+  loadGroups: () => {
+    let dreamerSettings = localStorage.getItem('dreamer');
+    dreamerSettings = JSON.parse(dreamerSettings);
+    if (dreamerSettings.hasOwnProperty('groups')) {
+      let existingGroups = dreamerSettings.groups;
+      for (let groupName in existingGroups.list) {
+        let groupOption = document.createElement('option');
+        groupOption.innerText = groupName;
+        if (existingGroups.hasOwnProperty('selected') && existingGroups.selected === groupName) {
+          groupOption.selected = true;
+        }
+        modal.currentGroup.append(groupOption);
+
+        let groupInList = document.createElement('li');
+        groupInList.innerText = groupName;
+        let removeGroup = document.createElement('i');
+        removeGroup.classList.add('fas', 'fa-trash');
+        removeGroup.addEventListener('click', () => {
+          groupInList.parentElement.removeChild(groupInList);
+          modal.currentGroup.removeChild(groupOption);
+          delete dreamerSettings.groups.list[groupName];
+
+          dreamerSettings.groups.selected = modal.currentGroup.value || "General";
+          if (Object.keys(dreamerSettings.groups.list).length === 0) {
+            delete dreamerSettings.groups;
+          }
+
+          modal.updateLocalStorage(dreamerSettings);
+        });
+
+        groupInList.append(removeGroup);
+        modal.groupsList.querySelector('ul').append(groupInList);
+      }
+    }
   }
 };
 
 let dreamerSettings;
 modal.initPresentationsList();
+modal.loadGroups();
 
 
 modal.root.addEventListener('click', (event) => {
@@ -185,4 +226,54 @@ modal.exampleSettings.addEventListener('click', () => {
   const exampleSettings = '{"settings":{"presentations":[{"url":"https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21226&authkey=AD5XM3A4SADXtSA&em=2","name":"Course Intro","editors":{"html":false,"css":false,"js":false,"php":false}},{"url":"https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21227&authkey=ABu34ud-GpuJXDc&em=2","name":"Intro to Web","editors":{"html":false,"css":false,"js":false,"php":false}},{"url":"https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21232&authkey=AGEzgK9R8MS08FE&em=2","name":"HTML5","editors":{"html":true,"css":false,"js":false,"php":false}},{"url":"https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21228&authkey=AHrBdJ9VjGNgTzY&em=2","name":"CSS3","editors":{"html":true,"css":true,"js":false,"php":false}},{"url":"https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21229&authkey=AFJmGBOgf6evnB4&em=2","name":"JavaScript","editors":{"html":true,"css":false,"js":true,"php":false}},{"url":"https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21230&authkey=ABjQU5k2Q7PgVdM&em=2","name":"PHP7","editors":{"html":true,"css":false,"js":false,"php":true}},{"url":"https://onedrive.live.com/embed?cid=93284563204F980C&resid=93284563204F980C%21231&authkey=AJEpFvtejnqsJsU&em=2","name":"The Next Episode","editors":{"html":true,"css":false,"js":true,"php":false}}],"checkpoint":6},"exercise":"","editorsFontSize":16}';
   dreamerSettings = localStorage.setItem('dreamer', exampleSettings);
   document.location.reload();
+});
+
+modal.currentGroup.addEventListener('change', (s) => {
+  let dreamerSettings = localStorage.getItem('dreamer');
+  dreamerSettings = JSON.parse(dreamerSettings);
+  dreamerSettings.groups.selected = s.target.value;
+  modal.updateLocalStorage(dreamerSettings);
+  document.location.reload();
+});
+
+modal.addNewGroup.addEventListener('click', () => {
+  let dreamerSettings = localStorage.getItem('dreamer');
+  dreamerSettings = JSON.parse(dreamerSettings);
+
+  let groupName = modal.newGroupInput.value;
+  if (groupName && (!dreamerSettings.groups || dreamerSettings.groups && !dreamerSettings.groups.list[groupName])) {
+    let groupElm = document.createElement('li');
+    groupElm.innerText = groupName;
+
+    let removeGroup = document.createElement('i');
+    removeGroup.classList.add('fas', 'fa-trash');
+    removeGroup.addEventListener('click', ()=> {
+      groupElm.parentElement.removeChild(groupElm);
+      modal.currentGroup.removeChild(groupSelect);
+      delete dreamerSettings.groups.list[groupName];
+      dreamerSettings.groups.selected = modal.currentGroup.value || "General";
+      if (Object.keys(dreamerSettings.groups.list).length === 0) {
+        delete dreamerSettings.groups;
+      }
+      modal.updateLocalStorage(dreamerSettings);
+    });
+
+    groupElm.append(removeGroup);
+    modal.groupsList.querySelector('ul').append(groupElm);
+
+    let groupSelect = document.createElement('option');
+    groupSelect.innerText = groupName;
+    modal.currentGroup.append(groupSelect);
+
+    // add to localstorage
+    if (!dreamerSettings.hasOwnProperty('groups')) {
+      dreamerSettings.groups = { list: {}, selected: 'General'};
+    }
+    dreamerSettings.groups.list[groupName] = {};
+    dreamerSettings.groups.list[groupName].exercise = exerciseCodeEditor.getValue();
+
+    modal.updateLocalStorage(dreamerSettings);
+
+    modal.newGroupInput.value = '';
+  }
 });

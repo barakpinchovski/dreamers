@@ -58,7 +58,7 @@
             
             <!-- Live update -->
             <main id="live-update" class="split">
-            
+                <iframe id="live-update-iframe"></iframe>
             </main>
             
             <!-- Embedded presentation -->
@@ -244,6 +244,17 @@
                     </table>
                     <section id="configurations">
                         <label for="editors-font-size">Default editors font-size: <input id="editors-font-size" type="number" min="12" max="60"/>px</label>
+                        <br/>
+                        <label for="current-group">Current group:</label>
+                        <select id="current-group">
+                            <option>General</option>
+                        </select>
+                        <br/><br/>
+                        <details id="groups-data">
+                            <summary>Groups</summary>
+                            <ul></ul>
+                            <label for="new-group-title">Add a new group:</label><input id="new-group-title"/><button id="add-new-group">Add Group</button>
+                        </details>
                     </section>
                 </main>
                 <footer>

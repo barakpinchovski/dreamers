@@ -6,6 +6,8 @@ if (dreamerSettingsGlobal) {
   dreamerSettingsDefaultZoom = dreamerSettingsGlobal.hasOwnProperty('editorsFontSize') ? dreamerSettingsGlobal.editorsFontSize : 12;
 }
 
+let dreamerSessionStorage = JSON.parse(sessionStorage.getItem('dreamer') || '{}');
+
 let htmlEditor = ace.edit("html");
 //editor.setTheme("ace/theme/crimson_editor");
 //editor.setTheme("ace/theme/iplastic");
@@ -13,16 +15,28 @@ htmlEditor.setTheme("ace/theme/crimson_editor");
 htmlEditor.session.setMode("ace/mode/html");
 htmlEditor.setFontSize(Number(dreamerSettingsDefaultZoom));
 
+if (dreamerSessionStorage.html) {
+  htmlEditor.setValue(dreamerSessionStorage.html);
+}
+
 let cssEditor = ace.edit("css");
 //editor.setTheme("ace/theme/twilight");
 cssEditor.setTheme("ace/theme/dracula");
 cssEditor.session.setMode("ace/mode/css");
 cssEditor.setFontSize(Number(dreamerSettingsDefaultZoom));
 
+if (dreamerSessionStorage.css) {
+  cssEditor.setValue(dreamerSessionStorage.css);
+}
+
 let jsEditor = ace.edit("js");
 jsEditor.setTheme("ace/theme/chrome");
 jsEditor.session.setMode("ace/mode/javascript");
 jsEditor.setFontSize(Number(dreamerSettingsDefaultZoom));
+
+if (dreamerSessionStorage.js) {
+  jsEditor.setValue(dreamerSessionStorage.js);
+}
 
 let examplesHtmlEditor = ace.edit('example-code');
 examplesHtmlEditor.setTheme("ace/theme/crimson_editor");
