@@ -52,7 +52,7 @@ liveUpdate.sync = (editorId, event) => {
         let scriptElm =  liveUpdate.iframe.querySelector('script');
 
         let newScript = document.createElement('script');
-        newScript.innerHTML = editorContent;
+        newScript.innerHTML = `(function() {${editorContent} })();`;
 
         if (scriptElm) {
           liveUpdate.iframe.documentElement.replaceChild(newScript, scriptElm);
